@@ -12,7 +12,7 @@ The UpSave account offers the highest interest rate of 4.0%.
 Benefits include the "Standard Savings Account" plus "with Insurance".
 
 
-Develop a decorator pattern approach that will implement the given UML diagram:
+# Develop a decorator pattern approach that will implement the given UML diagram:
 
 <img width="1328" alt="UML Decorator Pattern" src="https://github.com/harbeyme24/DecoratorPattern/assets/143273418/aa4de6a2-74ef-42b0-be88-d87af7becdca">
 
@@ -57,9 +57,9 @@ public class Cimb {
 
 You should display the following output:
 
+<img width="1373" alt="CODE Decorator Pattern" src="https://github.com/harbeyme24/DecoratorPattern/assets/143273418/298104f0-bb0d-4402-a8c2-45a1293bae15">
 
-
-Description of the following methods
+# Description of the following methods
 
 showAccountType() - Either returns "Savings Account", "GSave" or "UpSave"
 getInterestRate() - Either returns 1% for Savings Account; 2.5% for GSave; 4.0% UpSave
