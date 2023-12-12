@@ -14,6 +14,62 @@ Benefits include the "Standard Savings Account" plus "with Insurance".
 
 Develop a decorator pattern approach that will implement the given UML diagram:
 
+<img width="1328" alt="UML Decorator Pattern" src="https://github.com/harbeyme24/DecoratorPattern/assets/143273418/aa4de6a2-74ef-42b0-be88-d87af7becdca">
 
 
 The content of your Cimb.java should ONLY contain the following codes with the exception of inserting your own package name :
+
+public class Cimb {
+
+	public static void main(String[] args) {
+		
+		SavingsAccount account = new SavingsAccount();
+		
+		account.setAccountNumber(1234);
+		account.setAccountName("Juan Dela Cruz");
+		account.setBalance(10000.0);
+		
+		System.out.println(account.showInfo());
+		System.out.println("Account type: " + account.showAccountType());
+		System.out.println("Interest rate: " + account.getInterestRate());
+		System.out.println("New balance: " + account.computeBalanceWithInterest());
+		System.out.println("Benefits: " + account.showBenefits());
+		
+		System.out.println("----------------------");
+		
+		GSave gSave = new GSave(account);
+		System.out.println(gSave.showInfo());
+		System.out.println("Account type: " + gSave.showAccountType());
+		System.out.println("Interest rate: " + gSave.getInterestRate());
+		System.out.println("New balance: " + gSave.computeBalanceWithInterest());
+		System.out.println("Benefits: " + gSave.showBenefits());
+		
+		System.out.println("----------------------");
+		
+		UpSave upSave = new UpSave(account);
+		System.out.println(upSave.showInfo());
+		System.out.println("Account type: " + upSave.showAccountType());
+		System.out.println("Interest rate: " + upSave.getInterestRate());
+		System.out.println("New balance: " + upSave.computeBalanceWithInterest());
+		System.out.println("Benefits: " + upSave.showBenefits());
+	}
+}
+
+You should display the following output:
+
+
+
+Description of the following methods
+
+showAccountType() - Either returns "Savings Account", "GSave" or "UpSave"
+getInterestRate() - Either returns 1% for Savings Account; 2.5% for GSave; 4.0% UpSave
+getBalance() - Returns the balance of the account set.
+showBenefits() - Either returns "Standard Savings Account" for Savings Account;
+		    benefits offered by savings account + "GSave Transfer";
+                            benefits offered by savings account + "With Insurance";
+computeBalanceWithInterest() - returns new balance by computing the balance plus the interest depending on the interest rate.
+showInfo() - Returns details of account number, account name, and balance.
+
+BankAcountDecorator must be an interface.
+
+Follow instructions.  You are not allowed to insert other methods except what is stated in the diagram (setters and getters are allowed).
