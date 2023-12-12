@@ -1,45 +1,47 @@
 package decoratorPattern;
 
-public class UpSave implements BankAccountDecorator {
+public class UpSave implements BankAccountDecorator
+{
     private BankAccount bankAccount;
 
-    public UpSave(BankAccount bankAccount) {
+    public UpSave(BankAccount bankAccount)
+    {
         this.bankAccount = bankAccount;
     }
-
     @Override
-    public void setBankAccount(BankAccount bankAccount) {
-        this.bankAccount = bankAccount;
+    public String showBenefits()
+    {
+        return bankAccount.showBenefits() + ", W/ - Insurance";
+    }
+    public String showAccountType()
+    {
+        return "Saving(s) are Up!";
     }
 
     @Override
-    public String showAccountType() {
-        return "UpSave";
+    public Double computeBalanceWithInterest()
+    {
+        return bankAccount.getBalance() * (1 + getInterestRate());
     }
-
     @Override
-    public double getInterestRate() {
+    public Double getInterestRate()
+    {
         return 0.04;
     }
-
     @Override
-    public double getBalance() {
+    public Double getBalance()
+    {
         return bankAccount.getBalance();
     }
 
     @Override
-    public String showBenefits() {
-        return bankAccount.showBenefits() + ", With Insurance";
-    }
-
-    @Override
-    public double computeBalanceWithInterest() {
-        return bankAccount.getBalance() * (1 + getInterestRate());
-    }
-
-    @Override
-    public String showInfo() {
+    public String showInfo()
+    {
         return bankAccount.showInfo();
     }
-
+    @Override
+    public void setBankAccount(BankAccount bankAccount)
+    {
+        this.bankAccount = bankAccount;
+    }
 }
